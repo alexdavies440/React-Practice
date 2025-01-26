@@ -4,11 +4,9 @@ import './App.css'
 import Header from './assets/Header'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <Header></Header>
         
     </>
   )
