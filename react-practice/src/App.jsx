@@ -2,14 +2,17 @@ import { useState } from 'react'
 import './App.css'
 
 import Header from './assets/Header'
+import Button from './assets/Button/Button'
+import Button2 from './assets/Button2'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <Header></Header>
-        
+    <Button></Button>
+    <br />
+    <br />
+    <Button2></Button2>
     </>
   )
 }
