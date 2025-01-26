@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import Card from './assets/Card'
 
 import Header from './assets/Header'
 
@@ -8,8 +9,19 @@ function App() {
 
   return (
     <>
-      <Header></Header>
-        
+      <Card />
+      <Card /> 
+      <Card /> 
+      <Card /> 
+      <Card /> 
+      <Card /> 
+      <Card /> 
+      <Card /> 
+      <Card /> 
+      <Card /> 
+      <Card /> 
+      <Card /> 
+ 
     </>
   )
 }
