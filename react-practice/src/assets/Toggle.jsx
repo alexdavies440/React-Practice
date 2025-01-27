@@ -1,3 +1,5 @@
+
+import { useState } from 'react'
 import Button from "./Button"
 import UserGreeting from "./UserGreeting"
 
@@ -7,7 +9,6 @@ export default function Toggle() {
     const [buttonText, setButtonText] = useState("Login")
 
     const handleChange = () => {
-
 
         if (toggle === false) {
             setToggle(true);

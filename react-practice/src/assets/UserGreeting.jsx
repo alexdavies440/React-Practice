@@ -8,7 +8,7 @@ export default function UserGreeting(props) {
     return(props.isLoggedIn === true ? welcomeMessage : loginPrompt);
 }
 
-UserGreeting.PropTypes = {
+UserGreeting.propTypes = {
     username: PropTypes.string,
     isLoggedIn: PropTypes.bool
 }
