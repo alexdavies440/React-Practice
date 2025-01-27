@@ -1,5 +1,14 @@
+import PropTypes, { string } from 'prop-types'
 
 export default function UserGreeting(props) {
 
-    return(props.isLoggedIn === 1 ? <h2>Welcome {props.username}</h2> : <h2>Please log in to continue</h2>);
+    const welcomeMessage = <h2>Welcome {props.username}</h2>
+    const loginPrompt = <h2>Please log in to continue</h2>
+
+    return(props.isLoggedIn === true ? welcomeMessage : loginPrompt);
+}
+
+UserGreeting.PropTypes = {
+    username: PropTypes.string,
+    isLoggedIn: PropTypes.bool
 }
