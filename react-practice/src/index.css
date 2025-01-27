@@ -1,4 +1,4 @@
-:root {
+/* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -65,4 +65,22 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+} */
+
+.list-category {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: rgb(172, 255, 172);
+  margin-bottom: 10px;
+  text-align: center;
+  border: 3px solid;
+  border-radius: 5px;
+  background-color: green;
+  padding: 15px;
+}
+
+.list-items li:hover{
+  font-weight: bolder;
+  box-shadow: 0 0 5px;
+  background-color: rgb(172, 255, 172);
 }
