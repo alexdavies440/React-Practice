@@ -1,13 +1,12 @@
 import { useState } from 'react'
 import './App.css'
-
-import Header from './assets/Header'
+import MyComponent from './assets/MyComponent'
 
 function App() {
 
   return (
     <>
-        
+        <MyComponent />
     </>
   )
 }
