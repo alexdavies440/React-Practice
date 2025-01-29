@@ -1,13 +1,14 @@
 import { useState } from 'react'
 import './App.css'
-
-import Header from './assets/Header'
+import Button from './assets/Button'
+import ProfilePicture from './assets/ProfilePicture'
 
 function App() {
 
   return (
     <>
-        
+      <ProfilePicture />
+      <Button />
     </>
   )
 }
