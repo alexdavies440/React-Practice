@@ -15,6 +15,7 @@ export default function MyComponent() {
 
     function handleRemoveFood(index) {
 
+        // Underscore indicates placeholder for argument that doesn't get used
         setFoods(foods.filter((_, i) => i !== index));
     }
 
