@@ -28,8 +28,6 @@ input[type=text] {
 }
 
 .search-button {
-  position: relative;
-  top: -4px;
-  height: 34px;
+  font-size: 1.5em;
   margin-left: 5px;
 }
