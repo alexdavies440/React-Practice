@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 
 
-// const BASE_URL = 'https://www.omdbapi.com/?apikey=b0901f52&';
+const BASE_URL = 'https://www.omdbapi.com/?apikey=b0901f52&';
 
 
 
@@ -10,14 +10,18 @@ export default function Component() {
 
     const [movies, setMovies] = useState([]);
 
-    const url = 'https://www.omdbapi.com/?apikey=b0901f52&s=shrek';
+    // const url = 'https://www.omdbapi.com/?apikey=b0901f52&s=shrek';
+
+    // const url = 'https://fakestoreapi.com/products/';
 
     function getData() {
-        fetch(url)
-            .then((response) => response.json())
+        fetch(BASE_URL + "s=shrek2")
+            .then((response) => {
+                return response.json();
+            })
             .then((data) => {
-              setMovies(data);
-              console.log(data);
+                console.log(data);
+              setMovies(data.Search);
             })
             .catch((error) => console.log(error));
     }
@@ -31,10 +35,14 @@ export default function Component() {
     return(
         <div>
             <ul>
-            {movies.map((mov, index) => {
-          return <li key={index}>{mov.Title}</li>;
-        })}
-            </ul>  
+                {movies.map((movie, id) => {
+                    return <li key={id} className="list-item">
+                        {movie.Title} ({movie.Year})
+                        <br />
+                        <img className="movie-poster" src={movie.Poster} alt="" />
+                    </li>
+                })}
+            </ul>
         </div>
     );
 }
