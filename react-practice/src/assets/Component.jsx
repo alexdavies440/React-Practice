@@ -2,7 +2,10 @@ import { useEffect } from "react";
 import { useState } from "react";
 
 
-const BASE_URL = 'https://www.omdbapi.com/?apikey=b0901f52&';
+const BASE_URL = 'https://www.omdbapi.com/?apikey=';
+
+// Your API key
+const API_KEY = '';
 
 
 
@@ -11,13 +14,8 @@ export default function Component() {
     const [movies, setMovies] = useState([]);
     const [search, setSearch] = useState("");
 
-    // const url = 'https://www.omdbapi.com/?apikey=b0901f52&s=shrek';
-
-    // const url = 'https://fakestoreapi.com/products/';
-
-
     function getData() {
-        fetch(BASE_URL + "s=" + search)
+        fetch(BASE_URL + API_KEY + "&s=" + search)
             .then((response) => {
                 return response.json();
             })
@@ -33,28 +31,22 @@ export default function Component() {
     }
 
     function handleSearch() {
-        if (search !== "") {
+        if (search !== '' && API_KEY !== '') {
             getData();
         } else setMovies([]);
     }
-
-
-    // useEffect(() => {
-    //     getData();
-    //   }, []);
-    
 
     return(
         <div>
             <input type="text" onChange={handleChange} value={search}/>
             <button className="search-button" onClick={handleSearch}>Search</button>
-
+            <h2>{API_KEY === '' ?  "Please provide an API Key" : null}</h2>
             <ul>
                 {movies.map((movie, id) => {
                     return <li key={id} className="list-item">
                         {movie.Title} ({movie.Year})
                         <br />
-                        <img className="movie-poster" src={movie.Poster} alt="" />
+                        <img className="movie-poster" src={movie.Poster} alt="movie poster" />
                     </li>
                 })}
             </ul>
