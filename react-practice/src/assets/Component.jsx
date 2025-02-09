@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 
 
-const url = 'http://localhost:8080/test'
+const url = 'http://localhost:8080/test/movies'
 
 
 
@@ -18,19 +18,20 @@ export default function Component() {
 
     return(
         <div>
-            <h1>Events</h1>
+            <h1>Movies</h1>
             <hr />
-            <div>{serverData.map((item) => {
-                return (
-                    <div>
+            <div>{serverData.map((item) => 
+
+                    <div key={item.id}>
                     <h3>{item.name}</h3>
                         <ul>
-                            <li>Description: {item.description}</li>
-                            <li>Type: {item.type.toLowerCase()}</li>
+                            <li>Year: {item.year}</li>
+                            <li>Director: {item.director}</li>
+                            <li>Plot: {item.plot.toLowerCase()}</li>
                         </ul>
                         </div>
-                )
-            })}</div>
+                
+            )}</div>
         </div>
     );
 }
