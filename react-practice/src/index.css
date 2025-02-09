@@ -5,28 +5,34 @@
 }
 
 body {
-  background-image: url('https://www.commentnation.com/backgrounds/images/purple_notebook_paper_seamless_background_pattern.jpg');
+  background-image: url('https://static.vecteezy.com/system/resources/thumbnails/006/483/547/small/doodle-seamless-pattern-with-social-media-elements-objects-in-design-graphic-trendy-ornament-bright-global-symbols-simple-illustration-vector.jpg');
 }
 
 h1 {
   font-size: 4rem;
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(5px);
+  border: 0.5px solid rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
 }
 
 button {
   font-size: 1.7rem;
   font-weight: bold;
-  padding: 10px 20px;
+  padding: 10px 15px;
   color: white;
-  border: none;
-  border-radius: 5px;
+  border: 0.5px solid rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
   transition: background-color 0.5s ease;
 }
 
 input[type="text"] {
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(5px);
   font-size: 1.6rem;
   padding: 10px;
-  border: 2px solid;
-  border-radius: 5px;
+  border: 0.5px solid rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
   color: black;
 }
 
@@ -38,44 +44,47 @@ li {
   font-size: 2rem;
   font-weight: bold;
   padding: 15px;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(5px);
   margin-bottom: 10px;
-  border: 3px solid;
-  border-radius: 5px;
+  border: 0.5px solid rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
   display: flex;
   align-items: center;
 }
 
 .text {
   flex: 1;
+  text-align: left;
 }
 
 .add-button {
-  background-color: green;
+  margin-left: 10px;
+  background-color: rgb(43, 183, 43);
 }
 
 .add-button:hover {
-  background-color: rgb(0, 84, 0);
+  background-color: rgb(43, 163, 0);
 }
 
 .delete-button {
-  background-color: red;
+  background-color: rgb(255, 71, 71);
 }
 
 .delete-button:hover {
-  background-color: rgb(201, 0, 0);
+  background-color: rgb(213, 44, 44);
 }
 
 .move-button {
-  background-color: blue;
+  background-color: rgb(152, 152, 152);
 }
 
 .move-button:hover {
-  background-color: rgb(0, 80, 177);
+  background-color: rgb(120, 120, 120);
 }
 
 .delete-button, .move-button {
-  padding: 8px 12px;
+  padding: 8px 15px;
   font-size: 1.4rem;
   margin-left: 10px;
 }

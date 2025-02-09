@@ -49,7 +49,7 @@ export default function TodoList() {
 
             <div>
                 <input type="text" placeholder="Enter a task..." value={newTask} onChange={handleInputChange}/>
-                <button className="add-button" onClick={addTask}>+</button>
+                <button className="add-button" onClick={addTask}>✚</button>
             </div>
 
             <ol>
@@ -57,9 +57,9 @@ export default function TodoList() {
                     return (
                         <li key={index}>
                             <span className="text">{task}</span>
-                            <button className="delete-button" onClick={() => deleteTask(index)}>-</button>
-                            <button className="move-button" onClick={() => moveTaskUp(index)}>^</button>
-                            <button className="move-button" onClick={() => moveTaskDown(index)}>v</button>
+                            <button className="delete-button" onClick={() => deleteTask(index)}>X</button>
+                            <button className="move-button" onClick={() => moveTaskUp(index)}>▲</button>
+                            <button className="move-button" onClick={() => moveTaskDown(index)}>▼</button>
                         </li>
                     );
                 })}
