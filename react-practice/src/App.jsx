@@ -1,12 +1,13 @@
 import { useState } from 'react'
 import './App.css'
+import TodoList from './assets/TodoList'
 
 
 function App() {
 
   return (
     <>
-        
+      <TodoList />
     </>
   )
 }
