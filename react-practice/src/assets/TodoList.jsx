@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 export default function TodoList() {
 
-    const [tasks, setTasks] = useState(["test"]);
+    const [tasks, setTasks] = useState([]);
     const [newTask, setNewTask] = useState("");
 
     function handleInputChange(event) {
@@ -42,6 +42,16 @@ export default function TodoList() {
         
     }
 
+    const draggedTask = useRef(0);
+    const draggedOverTask = useRef(0);
+
+    function handleSwap() {
+        const updatedTasks = [...tasks];
+        [updatedTasks[draggedTask.current], updatedTasks[draggedOverTask.current]] = 
+            [updatedTasks[draggedOverTask.current], updatedTasks[draggedTask.current]];
+        setTasks(updatedTasks);
+    }
+
     return(
         <div className="todo-list">
 
@@ -55,11 +65,18 @@ export default function TodoList() {
             <ol>
                 {tasks.map((task, index) => {
                     return (
-                        <li key={index}>
-                            <span className="text">{task}</span>
+                        <li 
+                        key={index}
+                        draggable
+                        onDragStart={() => draggedTask.current = index}
+                        onDragEnter={() => draggedOverTask.current = index}
+                        onDragEnd={handleSwap}
+                        onDragOver={(e) => e.preventDefault()}
+                        >
+                            <span className="drag">≣&nbsp;&nbsp;</span><span className="text">{task}</span>
                             <button className="delete-button" onClick={() => deleteTask(index)}>X</button>
-                            <button className="move-button" onClick={() => moveTaskUp(index)}>▲</button>
-                            <button className="move-button" onClick={() => moveTaskDown(index)}>▼</button>
+                            {/* <button className="move-button" onClick={() => moveTaskUp(index)}>▲</button>
+                            <button className="move-button" onClick={() => moveTaskDown(index)}>▼</button> */}
                         </li>
                     );
                 })}
